@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Room</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav>
+    <div class="logo">
+        <a href="rooms.html">
+            <img src="images/logo.png" alt="Study With Nero Logo">
+            <span>Study With Nero</span>
+        </a>
+    </div>
+</nav>
+
+<div class="video-room">
+    <h1 id="roomTitle">Study Room</h1>
+
+    <iframe
+        id="jitsiFrame"
+        allow="camera; microphone; fullscreen; display-capture"
+    ></iframe>
+</div>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const room = params.get("room") || "Study-With-Nero";
+
+    document.getElementById("roomTitle").textContent = room.replaceAll("-", " ");
+
+    document.getElementById("jitsiFrame").src =
+        `https://meet.jit.si/StudyWithNero-${room}`;
+</script>
+
+</body>
+</html>

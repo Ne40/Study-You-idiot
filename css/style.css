@@ -1,0 +1,423 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Consolas", sans-serif;
+    color: #fff;
+    background:
+        linear-gradient(rgba(10, 35, 28, 0.72), rgba(10, 35, 28, 0.72)),
+        url("../images/thought-catalog-505eectW54k-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* ================= NAVBAR ================= */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 7%;
+    background: rgba(0, 0, 0, 0.32);
+    backdrop-filter: blur(12px);
+}
+
+.logo a,
+nav > a.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+}
+
+.logo img,
+nav > a.logo img,
+nav img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #95d5b2;
+    padding: 3px;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.45);
+}
+
+.logo span {
+    color: #d8f3dc;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-links ul {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+.nav-links ul li {
+    list-style: none;
+}
+
+.nav-links ul li a {
+    color: #f4f7f5;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-links ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #b7e4c7;
+    transition: 0.3s;
+}
+
+.nav-links ul li a:hover {
+    color: #b7e4c7;
+}
+
+.nav-links ul li a:hover::after {
+    width: 100%;
+}
+
+/* ================= HOME PAGE ================= */
+
+.header {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+.text-box {
+    width: 88%;
+    max-width: 980px;
+    color: #fff;
+    position: absolute;
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    padding: 48px 42px;
+    background: rgba(0, 0, 0, 0.32);
+    border: 1px solid rgba(183, 228, 199, 0.28);
+    border-radius: 28px;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+.badge {
+    display: inline-block;
+    margin-bottom: 24px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: rgba(149, 213, 178, 0.15);
+    border: 1px solid rgba(183, 228, 199, 0.35);
+    color: #d8f3dc;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.text-box h1 {
+    font-family: "Press Start 2P", "Consolas", sans-serif;
+    font-size: 42px;
+    line-height: 1.4;
+    margin-bottom: 22px;
+    color: #ffffff;
+    text-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.intro-text {
+    max-width: 760px;
+    margin: 0 auto 28px;
+    color: #eef8f2;
+    font-size: 22px;
+    line-height: 1.7;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin: 28px 0;
+}
+
+.features div {
+    padding: 13px 18px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.11);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #d8f3dc;
+    font-weight: bold;
+}
+
+.small-text {
+    margin-top: 20px;
+    color: #dcefe4;
+    font-size: 16px;
+}
+
+.small-text a {
+    color: #b7e4c7;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.small-text a:hover {
+    color: #95d5b2;
+}
+
+.hero-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 14px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hero-btn.primary {
+    background: #95d5b2;
+    color: #12372a;
+}
+
+.hero-btn.primary:hover {
+    background: #74c69d;
+    transform: translateY(-3px);
+}
+
+.hero-btn.secondary {
+    border: 1px solid #b7e4c7;
+    color: #d8f3dc;
+    background: rgba(183, 228, 199, 0.08);
+}
+
+.hero-btn.secondary:hover {
+    background: rgba(183, 228, 199, 0.18);
+    transform: translateY(-3px);
+}
+
+/* ================= LOGIN / SIGNUP ================= */
+
+.container {
+    width: 90%;
+    max-width: 430px;
+    margin: 90px auto 0;
+    padding: 38px 34px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.11);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+#swn {
+    margin-bottom: 28px;
+    font-size: 28px;
+    color: #d8f3dc;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+input {
+    padding: 14px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.92);
+    font-size: 16px;
+}
+
+input:focus {
+    border-color: #95d5b2;
+    box-shadow: 0 0 0 3px rgba(149, 213, 178, 0.25);
+}
+
+button {
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #95d5b2;
+    color: #12372a;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #74c69d;
+    transform: translateY(-2px);
+}
+
+#error {
+    margin-top: 18px;
+    color: #ffb3b3;
+    font-weight: bold;
+}
+
+.switch-page {
+    margin-top: 18px;
+    font-size: 15px;
+    color: #eef8f2;
+}
+
+.switch-page a {
+    color: #b7e4c7;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.switch-page a:hover {
+    color: #95d5b2;
+}
+
+/* ================= ROOMS PAGE ================= */
+
+.page {
+    width: 90%;
+    max-width: 1200px;
+    margin: 45px auto;
+    text-align: center;
+}
+
+.page h1 {
+    margin-bottom: 40px;
+    color: #d8f3dc;
+    font-size: 36px;
+}
+
+.rooms {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.room-card {
+    background: rgba(255, 255, 255, 0.11);
+    padding: 24px;
+    border-radius: 18px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    transition: 0.3s;
+}
+
+.room-card:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.room-card h2,
+.room-card h3 {
+    margin-bottom: 12px;
+    color: #b7e4c7;
+}
+
+.room-card p {
+    margin-bottom: 18px;
+    color: #eef8f2;
+}
+
+.room-card button {
+    padding: 10px 18px;
+    font-size: 15px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 18px;
+        padding: 18px 5%;
+    }
+
+    .logo img,
+    nav img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .logo span {
+        font-size: 18px;
+    }
+
+    .nav-links ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+    }
+
+    .nav-links ul li a {
+        font-size: 15px;
+    }
+
+    .text-box {
+        top: 58%;
+    }
+
+    .text-box h1 {
+        font-size: 28px;
+        margin-bottom: 24px;
+    }
+
+    .text-box h2,
+    .text-box h3,
+    .text-box b,
+    .text-box p {
+        font-size: 18px;
+    }
+
+    .container {
+        margin-top: 55px;
+    }
+
+    .page h1 {
+        font-size: 28px;
+    }
+}
+
+.video-room {
+    width: 92%;
+    margin: 35px auto;
+    text-align: center;
+}
+
+.video-room h1 {
+    margin-bottom: 25px;
+    color: #d8f3dc;
+}
+
+#jitsiFrame {
+    width: 100%;
+    height: 75vh;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+}
