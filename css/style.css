@@ -421,3 +421,19 @@ button:hover {
     border-radius: 20px;
     box-shadow: 0 20px 45px rgba(0,0,0,0.35);
 }
+
+@media (max-width: 768px) {
+
+    .text-box {
+        position: static; /* 👈 أهم حاجة */
+        transform: none;
+
+        width: 92%;
+        margin: 40px auto;
+        padding: 28px 20px;
+
+        top: auto;
+        left: auto;
+    }
+
+}
