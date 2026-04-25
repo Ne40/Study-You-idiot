@@ -14,8 +14,6 @@ if (username) {
                 <span>${username}</span>
             </a>
         </li>
-
-        <li><a href="#" onclick="logout()">Logout</a></li>
     `;
 } else {
     navMenu.innerHTML = `

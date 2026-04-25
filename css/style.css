@@ -699,3 +699,13 @@ button:hover {
     background: #ff6b6b;
     color: #fff;
 }
+
+.logout-btn {
+    background: #ff4d4d !important;
+    color: #fff !important;
+    margin-top: 14px;
+}
+
+.logout-btn:hover {
+    background: #d93636 !important;
+}
