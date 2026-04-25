@@ -462,3 +462,33 @@ button:hover {
 .user-info button:hover {
     background: #ff4d4d;
 }
+
+#userBox a,
+#userBox a:visited {
+    color: #f4f7f5;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+#userBox a:hover {
+    color: #b7e4c7;
+}
+
+.auth-links {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.auth-links a,
+.auth-links a:visited {
+    color: #f4f7f5;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.auth-links a:hover {
+    color: #b7e4c7;
+}   
