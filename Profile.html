@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav>
+    <div class="logo">
+        <a href="intro.html">
+            <img src="images/logo.png" alt="Study With Nero Logo">
+            <span>Study With Nero</span>
+        </a>
+    </div>
+
+    <div class="nav-links">
+        <ul id="navMenu"></ul>
+    </div>
+</nav>
+
+<div class="profile-page">
+    <div class="profile-card">
+
+        <div class="profile-left">
+            <div class="profile-preview">
+                <div class="avatar-preview" id="profileAvatar">📷</div>
+                <h2 id="profileName">Your Name</h2>
+                <p id="profileEmail"></p>
+                <p id="profileBio">Bio...</p>
+            </div>
+        </div>
+
+        <div class="profile-form">
+            <h1>My Study Profile ✨</h1>
+
+            <div class="form-group">
+                <label>Bio</label>
+                <textarea id="bio"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Goals</label>
+                <textarea id="goals"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Profile Picture</label>
+                <input type="file" id="profileImage" accept="image/*">
+            </div>
+
+            <button id="saveProfileBtn">Save Changes</button>
+            <p id="error"></p>
+
+            <hr>
+
+            <h2>To-do List ✅</h2>
+
+            <div class="todo-box">
+                <input type="text" id="todoInput" placeholder="Add a task...">
+                <button id="addTodoBtn">Add</button>
+            </div>
+
+            <ul id="todoList" class="todo-list"></ul>
+        </div>
+
+    </div>
+</div>
+
+<script src="js/nav.js"></script>
+<script type="module" src="js/profilePage.js"></script>
+
+</body>
+</html>

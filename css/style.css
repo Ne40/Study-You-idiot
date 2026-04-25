@@ -647,3 +647,55 @@ button:hover {
         font-size: 26px;
     }
 }
+
+.profile-nav {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.profile-nav img {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #95d5b2;
+    padding: 1px;
+}
+
+.profile-nav span {
+    color: #d8f3dc;
+}
+
+.todo-box {
+    display: flex;
+    gap: 12px;
+}
+
+.todo-box input {
+    flex: 1;
+}
+
+.todo-list {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.todo-list li {
+    list-style: none;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo-list button {
+    padding: 7px 10px;
+    font-size: 13px;
+    background: #ff6b6b;
+    color: #fff;
+}
