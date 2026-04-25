@@ -57,8 +57,4 @@ function loadRooms() {
 window.joinRoom = function(roomName) {
     let safeRoomName = roomName.replaceAll(" ", "-");
     window.location.href = `VideoRoom.html?room=${safeRoomName}`;
-<<<<<<< HEAD
 };
-=======
-};
->>>>>>> 2b46fd1db03ef8927d4d9d2f436cd0aae373587f
