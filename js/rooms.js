@@ -13,6 +13,8 @@ const auth = getAuth(app);
 
 // ✅ تحقق من المستخدم
 onAuthStateChanged(auth, (user) => {
+    console.log("USER:", user);
+
     if (!user) {
         window.location.href = "Log-in.html";
     } else {
