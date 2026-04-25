@@ -16,6 +16,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 const storage = getStorage(app);
+const goals = document.getElementById("goals").value.trim();
 
 let currentUser = null;
 
@@ -55,6 +56,7 @@ document.getElementById("profileForm").addEventListener("submit", async function
             major: education === "University" ? major : "",
             profileImage: imageUrl,
             profileCompleted: true,
+            goals: goals,
             updatedAt: new Date()
         }, { merge: true });
 
