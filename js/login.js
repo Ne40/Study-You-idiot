@@ -17,7 +17,8 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
     let password = document.getElementById("password").value;
 
     signInWithEmailAndPassword(auth, email, password)
-    .then(() => {
+    .then((userCredential) => {
+        localStorage.setItem("user", userCredential.user.email);
         window.location.href = "rooms.html";
     })
     .catch(() => {

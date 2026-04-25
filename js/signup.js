@@ -23,7 +23,8 @@ document.getElementById("signupForm").addEventListener("submit", function(e) {
     }
 
     createUserWithEmailAndPassword(auth, email, password)
-    .then(() => {
+    .then((userCredential) => {
+        localStorage.setItem("user", userCredential.user.email);
         window.location.href = "rooms.html";
     })
     .catch((error) => {
