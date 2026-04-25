@@ -21,10 +21,11 @@ let currentUser = null;
 
 onAuthStateChanged(auth, (user) => {
     if (!user) {
-        window.location.href = "Log-in.html";
-    } else {
-        currentUser = user;
+        console.log("No user yet...");
+        return;
     }
+
+    currentUser = user;
 });
 
 document.getElementById("profileForm").addEventListener("submit", async function(e) {
