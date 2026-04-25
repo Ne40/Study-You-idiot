@@ -61,9 +61,21 @@ document.getElementById("profileForm").addEventListener("submit", async function
         let imageUrl = "";
 
         if (imageFile) {
-            const imageRef = ref(storage, `profileImages/${currentUser.uid}`);
-            await uploadBytes(imageRef, imageFile);
-            imageUrl = await getDownloadURL(imageRef);
+            try {
+                console.log("Uploading image...");
+
+                const imageRef = ref(storage, `profileImages/${currentUser.uid}`);
+                await uploadBytes(imageRef, imageFile);
+
+                console.log("Upload done");
+
+                imageUrl = await getDownloadURL(imageRef);
+
+                console.log("Image URL:", imageUrl);
+
+            } catch (err) {
+                console.error("Upload error:", err);
+            }
         }
 
         await setDoc(doc(db, "users", currentUser.uid), {
