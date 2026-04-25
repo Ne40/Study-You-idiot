@@ -1,25 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Profile</title>
+
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">
+        <a href="intro.html">
+            <img src="images/logo.png" alt="Study With Nero Logo">
+            <span>Study With Nero</span>
+        </a>
+    </div>
+
+    <div class="nav-links">
+        <ul id="navMenu"></ul>
+    </div>
+</nav>
+
 <div class="container">
     <h1 id="swn">Complete Your Profile 👤</h1>
 
     <form id="profileForm">
+
         <select id="gender" required>
-            <option value="">Select gender</option>
+            <option value="">Select Gender</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
         </select>
 
-        <textarea id="bio" placeholder="Write your bio..." required></textarea>
+        <textarea id="bio" placeholder="Write something about yourself..." required></textarea>
 
         <select id="education" required>
-            <option value="">Education level</option>
+            <option value="">Education Level</option>
             <option value="University">University</option>
             <option value="High School">High School</option>
             <option value="Middle School">Middle School</option>
         </select>
 
-        <input type="text" id="major" placeholder="Your university major">
+        <input 
+            type="text" 
+            id="major" 
+            placeholder="Your major / specialization"
+        >
 
-        <input type="file" id="profileImage" accept="image/*">
+        <input 
+            type="file" 
+            id="profileImage" 
+            accept="image/*"
+        >
 
         <button type="submit">Save Profile</button>
     </form>
@@ -27,4 +62,8 @@
     <p id="error"></p>
 </div>
 
+<script src="js/nav.js"></script>
 <script type="module" src="js/profile.js"></script>
+
+</body>
+</html>
