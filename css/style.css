@@ -470,3 +470,21 @@ button:hover {
         border-radius: 16px;
     }
 }
+
+.nav-links {
+    display: flex !important;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-links ul {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links ul li {
+    list-style: none;
+}
