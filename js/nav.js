@@ -21,8 +21,3 @@ if (user) {
 
     userBox.innerHTML = "";
 }
-
-function logout() {
-    localStorage.removeItem("user");
-    window.location.href = "Log-in.html";
-}
