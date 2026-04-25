@@ -13,7 +13,11 @@ const auth = getAuth(app);
 
 // ✅ تحقق من المستخدم
 onAuthStateChanged(auth, (user) => {
-    loadRooms();
+    if (user) {
+        loadRooms();
+    } else {
+        window.location.href = "Log-in.html";
+    }
 });
 
 // ✅ تحميل الرومات
