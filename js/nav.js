@@ -5,14 +5,18 @@ let user = localStorage.getItem("user");
 if (user) {
     userBox.innerHTML = `
         <div class="user-info">
-            <span>Welcome, ${user.split("@")[0]} 👋</span>
-            <button onclick="logout()">Logout</button>
+            <li><a href="intro.html">Home</a></li>
+            <li><a href="rooms.html">Rooms</a></li>
+            <li class="welcome">Welcome, ${user.split("@")[0]} 👋</li>
+            <li><a href="#" onclick="logout()">Logout</a></li>
         </div>
     `;
 } else {
     userBox.innerHTML = `
-        <a href="Log-in.html">Log-in</a>
-        <a href="Sign-up.html">Sign-up</a>
+        <li><a href="intro.html">Home</a></li>
+        <li><a href="rooms.html">Rooms</a></li>
+        <li><a href="Log-in.html">Log-in</a></li>
+        <li><a href="Sign-up.html">Sign-up</a></li>
     `;
 }
 

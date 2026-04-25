@@ -55,9 +55,11 @@ nav img {
 }
 
 .nav-links ul {
-    display: flex;
-    gap: 28px;
-    align-items: center;
+.welcome {
+    color: #d8f3dc;
+    font-weight: bold;
+    font-size: 16px;
+}
 }
 
 .nav-links ul li {
@@ -475,20 +477,46 @@ button:hover {
     color: #b7e4c7;
 }
 
-.auth-links {
+.auth-links ul {
     display: flex;
     gap: 18px;
     align-items: center;
 }
 
-.auth-links a,
-.auth-links a:visited {
+.auth-links ul li {
+    list-style: none;
+}
+
+.auth-links ul li a {
     color: #f4f7f5;
     text-decoration: none;
     font-size: 17px;
     font-weight: bold;
+    position: relative;
+    transition: 0.3s;
 }
 
-.auth-links a:hover {
+.auth-links ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #b7e4c7;
+    transition: 0.3s;
+}
+
+.auth-links ul li a:hover {
     color: #b7e4c7;
-}   
+}
+
+.auth-links ul li a:hover::after {
+    width: 100%;
+}
+
+.welcome {
+    color: #d8f3dc;
+    font-weight: bold;
+    font-size: 16px;
+}
