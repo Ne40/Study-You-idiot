@@ -4,24 +4,31 @@ import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/fir
 const firebaseConfig = {
     apiKey: "AIzaSyAUknZsCJc7LF2KOCaeJLGr_WCN0zxYs9k",
     authDomain: "study-you-idiot-authentication.firebaseapp.com",
-    projectId: "study-you-idiot-authentication",
+    projectId: "study-you-idiot-authentication"
 };
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-document.getElementById("loginForm").addEventListener("submit", function(e) {
+document.getElementById("loginForm").addEventListener("submit", async function(e) {
     e.preventDefault();
 
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+    const error = document.getElementById("error");
 
-    signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-        localStorage.setItem("user", userCredential.user.email);
+    try {
+        error.textContent = "";
+
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+
+        console.log("Logged in:", userCredential.user.email);
+
         window.location.href = "rooms.html";
-    })
-    .catch(() => {
-        document.getElementById("error").textContent = "Login failed ❌";
-    });
+
+    } catch (err) {
+        console.error(err);
+
+        error.textContent = "Wrong email or password ❌";
+    }
 });
