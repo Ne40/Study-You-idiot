@@ -8,7 +8,6 @@ const firebaseConfig = {
     projectId: "study-you-idiot-authentication",
 };
 
-<<<<<<< HEAD
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
@@ -19,36 +18,6 @@ onAuthStateChanged(auth, (user) => {
     } else {
         loadRooms();
     }
-=======
-fetch("./data/rooms.json")
-.then(response => {
-    if (!response.ok) {
-        throw new Error("rooms.json not found");
-    }
-    return response.json();
-})
-.then(data => {
-    let container = document.getElementById("roomsContainer");
-    container.innerHTML = "";
-
-    data.forEach(room => {
-        let div = document.createElement("div");
-        div.classList.add("room-card");
-
-        div.innerHTML = `
-            <h2>${room.name}</h2>
-            <p>${room.users} people studying</p>
-            <button onclick="joinRoom('${room.name}')">Join</button>
-        `;
-
-        container.appendChild(div);
-    });
-})
-.catch(err => {
-    console.error(err);
-    document.getElementById("roomsContainer").innerHTML =
-        `<p style="color:#ffb3b3;">Rooms failed to load ❌</p>`;
->>>>>>> c0aabc9fc60c983d45788652c76b51e33847c9c6
 });
 
 // ✅ تحميل الرومات
@@ -88,8 +57,4 @@ function loadRooms() {
 window.joinRoom = function(roomName) {
     let safeRoomName = roomName.replaceAll(" ", "-");
     window.location.href = `VideoRoom.html?room=${safeRoomName}`;
-<<<<<<< HEAD
 };
-=======
-}
->>>>>>> c0aabc9fc60c983d45788652c76b51e33847c9c6
