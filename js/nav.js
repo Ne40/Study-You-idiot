@@ -7,7 +7,6 @@ if (username) {
     navMenu.innerHTML = `
         <li><a href="intro.html">Home</a></li>
         <li><a href="rooms.html">Rooms</a></li>
-
         <li>
             <a href="Profile.html" class="profile-nav">
                 <img src="${profileImage || 'images/logo.png'}" alt="Profile">
