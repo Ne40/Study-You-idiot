@@ -22,14 +22,16 @@
     <div class="nav-links">
         <ul id="navMenu"></ul>
     </div>
-</nav>    
+</nav>
 
 <div class="profile-page">
     <div class="profile-card">
+
         <div class="profile-left">
             <h1>Complete Your Profile 👤</h1>
             <p>
-                Tell people who you are, what you study, and what goals you are working on.
+                Tell people who you are, what you study,
+                and what goals you are working on.
             </p>
 
             <div class="profile-preview">
@@ -40,9 +42,10 @@
         </div>
 
         <form id="profileForm" class="profile-form">
+
             <div class="form-row">
                 <div class="form-group">
-                    <label>Gender</label>
+                    <label for="gender">Gender</label>
                     <select id="gender" required>
                         <option value="">Select Gender</option>
                         <option value="Male">Male</option>
@@ -51,7 +54,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Education Level</label>
+                    <label for="education">Education Level</label>
                     <select id="education" required>
                         <option value="">Education Level</option>
                         <option value="University">University</option>
@@ -62,28 +65,45 @@
             </div>
 
             <div class="form-group">
-                <label>Major / Specialization</label>
-                <input type="text" id="major" placeholder="Computer Science, Medicine, Engineering...">
+                <label for="major">Major / Specialization</label>
+                <input 
+                    type="text" 
+                    id="major" 
+                    placeholder="Computer Science, Medicine, Engineering..."
+                >
             </div>
 
             <div class="form-group">
-                <label>Bio</label>
-                <textarea id="bio" placeholder="Write something about yourself..." required></textarea>
+                <label for="bio">Bio</label>
+                <textarea 
+                    id="bio" 
+                    placeholder="Write something about yourself..." 
+                    required
+                ></textarea>
             </div>
 
             <div class="form-group">
-                <label>Your Goals</label>
-                <textarea id="goals" placeholder="Example: Finish 3 chapters today, improve my GPA, study 4 hours daily..."></textarea>
+                <label for="goals">Your Goals</label>
+                <textarea 
+                    id="goals" 
+                    placeholder="Example: Finish 3 chapters today, improve my GPA, study 4 hours daily..."
+                ></textarea>
             </div>
 
             <div class="form-group">
-                <label>Profile Picture</label>
+                <label for="profileImage">Profile Picture</label>
                 <input type="file" id="profileImage" accept="image/*">
             </div>
 
             <button type="submit">Save Profile</button>
             <p id="error"></p>
+
         </form>
     </div>
 </div>
+
+<script src="js/nav.js"></script>
+<script type="module" src="js/profile.js"></script>
+
+</body>
 </html>
