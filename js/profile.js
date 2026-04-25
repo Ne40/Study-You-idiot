@@ -4,25 +4,37 @@ import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-storage.js";
 
 const firebaseConfig = {
-    apiKey: "YOUR_KEY",
-    authDomain: "YOUR_DOMAIN",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_SENDER_ID",
-    appId: "YOUR_APP_ID"
+    apiKey: "AIzaSyAUknZsCJc7LF2KOCaeJLGr_WCN0zxYs9k",
+    authDomain: "study-you-idiot-authentication.firebaseapp.com",
+    projectId: "study-you-idiot-authentication",
+    storageBucket: "study-you-idiot-authentication.appspot.com"
 };
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 const storage = getStorage(app);
-const goals = document.getElementById("goals").value.trim();
 
 let currentUser = null;
 
+const profileImageInput = document.getElementById("profileImage");
+const avatarPreview = document.getElementById("avatarPreview");
+
+profileImageInput.addEventListener("change", function () {
+    const file = profileImageInput.files[0];
+
+    if (!file) return;
+
+    const imageURL = URL.createObjectURL(file);
+
+    avatarPreview.innerHTML = `
+        <img src="${imageURL}" alt="Profile Preview">
+    `;
+});
+
 onAuthStateChanged(auth, (user) => {
     if (!user) {
-        console.log("No user yet...");
+        window.location.href = "Log-in.html";
         return;
     }
 
@@ -36,8 +48,14 @@ document.getElementById("profileForm").addEventListener("submit", async function
     const bio = document.getElementById("bio").value.trim();
     const education = document.getElementById("education").value;
     const major = document.getElementById("major").value.trim();
+    const goals = document.getElementById("goals").value.trim();
     const imageFile = document.getElementById("profileImage").files[0];
     const error = document.getElementById("error");
+
+    if (!currentUser) {
+        error.textContent = "Please login first ❌";
+        return;
+    }
 
     try {
         let imageUrl = "";
@@ -50,13 +68,13 @@ document.getElementById("profileForm").addEventListener("submit", async function
 
         await setDoc(doc(db, "users", currentUser.uid), {
             email: currentUser.email,
-            gender: gender,
-            bio: bio,
-            education: education,
+            gender,
+            bio,
+            education,
             major: education === "University" ? major : "",
+            goals,
             profileImage: imageUrl,
             profileCompleted: true,
-            goals: goals,
             updatedAt: new Date()
         }, { merge: true });
 
