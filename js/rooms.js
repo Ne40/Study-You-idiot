@@ -4,8 +4,13 @@ if (!user) {
     window.location.href = "Log-in.html";
 }
 
-fetch("data/rooms.json")
-.then(response => response.json())
+fetch("./data/rooms.json")
+.then(response => {
+    if (!response.ok) {
+        throw new Error("rooms.json not found");
+    }
+    return response.json();
+})
 .then(data => {
     let container = document.getElementById("roomsContainer");
     container.innerHTML = "";
@@ -24,7 +29,9 @@ fetch("data/rooms.json")
     });
 })
 .catch(err => {
-    console.error("Error loading rooms:", err);
+    console.error(err);
+    document.getElementById("roomsContainer").innerHTML =
+        `<p style="color:#ffb3b3;">Rooms failed to load ❌</p>`;
 });
 
 function joinRoom(roomName) {
