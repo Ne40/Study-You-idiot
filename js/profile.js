@@ -104,8 +104,9 @@ console.log("Saving profile for:", currentUser.uid);
         profileCompleted: true,
         updatedAt: new Date()
     }, { merge: true });
-
+    
     console.log("Profile saved successfully");
+    localStorage.setItem("profileImage", imageUrl); 
 
     window.location.href = "rooms.html";
 

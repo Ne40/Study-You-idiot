@@ -1,16 +1,22 @@
 const navMenu = document.getElementById("navMenu");
-const userBox = document.getElementById("userBox");
 
-let user = localStorage.getItem("user");
+let username = localStorage.getItem("user");
+let profileImage = localStorage.getItem("profileImage");
 
-if (user) {
+if (username) {
     navMenu.innerHTML = `
         <li><a href="intro.html">Home</a></li>
         <li><a href="rooms.html">Rooms</a></li>
-        <li class="welcome">Welcome, ${user.split("@")[0]} 👋</li>
-    `;
 
-    userBox.innerHTML = "";
+        <li>
+            <a href="Profile.html" class="profile-nav">
+                <img src="${profileImage || 'images/logo.png'}" alt="Profile">
+                <span>${username}</span>
+            </a>
+        </li>
+
+        <li><a href="#" onclick="logout()">Logout</a></li>
+    `;
 } else {
     navMenu.innerHTML = `
         <li><a href="intro.html">Home</a></li>
@@ -18,6 +24,10 @@ if (user) {
         <li><a href="Log-in.html">Log-in</a></li>
         <li><a href="Sign-up.html">Sign-up</a></li>
     `;
+}
 
-    userBox.innerHTML = "";
+function logout() {
+    localStorage.removeItem("user");
+    localStorage.removeItem("profileImage");
+    window.location.href = "Log-in.html";
 }
