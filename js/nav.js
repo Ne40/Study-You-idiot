@@ -8,7 +8,6 @@ if (user) {
         <li><a href="intro.html">Home</a></li>
         <li><a href="rooms.html">Rooms</a></li>
         <li class="welcome">Welcome, ${user.split("@")[0]} 👋</li>
-        <li><a href="#" onclick="logout()">Logout</a></li>
     `;
 
     userBox.innerHTML = "";
