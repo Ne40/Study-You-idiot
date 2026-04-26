@@ -28,3 +28,28 @@ function logout() {
     localStorage.removeItem("profileImage");
     window.location.href = "Log-in.html";
 }
+
+let themeBtn = document.createElement("li");
+
+themeBtn.innerHTML = `<button id="themeToggle">🌙</button>`;
+
+navMenu.appendChild(themeBtn);
+
+const toggle = document.getElementById("themeToggle");
+
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+    toggle.textContent = "☀️";
+}
+
+toggle.onclick = () => {
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+        toggle.textContent = "☀️";
+    } else {
+        localStorage.setItem("theme", "light");
+        toggle.textContent = "🌙";
+    }
+};

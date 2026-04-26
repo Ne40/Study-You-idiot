@@ -8,11 +8,18 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<script>
+    window.addEventListener("load", function () {
+        setTimeout(() => {
+            document.getElementById("loader").classList.add("hide");
+        }, 1800);
+    });
+</script>
 <nav>
     <div class="logo">
         <a href="intro.html">
             <img src="images/logo.png" alt="Study With Nero Logo">
-            <span>Study With Nero</span>
+            <span>STUDY Y0U IDIOT</span>
         </a>
     </div>
 
@@ -42,5 +49,16 @@
 
 <script type="module" src="js/signup.js"></script>
 <script src="js/nav.js"></script>
+
+<div id="loader">
+    <div class="loader-box">
+        <span>// BOOTING STUDY SYSTEM</span>
+        <h1>STUDY Y0U IDIOT</h1>
+        <div class="loading-bar">
+            <div></div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

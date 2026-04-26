@@ -11,7 +11,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// ✅ تحقق من المستخدم
+
 onAuthStateChanged(auth, (user) => {
     if (user) {
         loadRooms();
@@ -20,7 +20,7 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 
-// ✅ تحميل الرومات
+
 function loadRooms() {
     fetch("./data/rooms.json")
     .then(res => {
@@ -53,7 +53,7 @@ function loadRooms() {
     });
 }
 
-// ✅ دخول الروم
+
 window.joinRoom = function(roomName) {
     let safeRoomName = roomName.replaceAll(" ", "-");
     window.location.href = `VideoRoom.html?room=${safeRoomName}`;

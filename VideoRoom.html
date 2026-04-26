@@ -1,40 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Room</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="images/logo.png">
+        <title>Study Room</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <script>
+        window.addEventListener("load", function () {
+            setTimeout(() => {
+                document.getElementById("loader").classList.add("hide");
+            }, 1800);
+        });
+    </script>
+    <body>
 
-<nav>
-    <div class="logo">
-        <a href="rooms.html">
-            <img src="images/logo.png" alt="Study With Nero Logo">
-            <span>Study With Nero</span>
-        </a>
+    <nav>
+        <div class="logo">
+            <a href="rooms.html">
+                <img src="images/logo.png" alt="Study With Nero Logo">
+                <span>STUDY Y0U IDIOT</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="video-room">
+        <h1 id="roomTitle">Study Room</h1>
+
+        <iframe
+            id="jitsiFrame"
+            allow="camera; microphone; fullscreen; display-capture"
+        ></iframe>
     </div>
-</nav>
 
-<div class="video-room">
-    <h1 id="roomTitle">Study Room</h1>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const room = params.get("room") || "Study-With-Nero";
 
-    <iframe
-        id="jitsiFrame"
-        allow="camera; microphone; fullscreen; display-capture"
-    ></iframe>
-</div>
+        document.getElementById("roomTitle").textContent = room.replaceAll("-", " ");
 
-<script>
-    const params = new URLSearchParams(window.location.search);
-    const room = params.get("room") || "Study-With-Nero";
+        document.getElementById("jitsiFrame").src =
+            `https://meet.jit.si/StudyWithNero-${room}`;
+    </script>
+        <div id="loader">
+            <div class="loader-box">
+                <span>// BOOTING STUDY SYSTEM</span>
+                <h1>STUDY Y0U IDIOT</h1>
+                <div class="loading-bar">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <script src="js/nav.js"></script>
 
-    document.getElementById("roomTitle").textContent = room.replaceAll("-", " ");
-
-    document.getElementById("jitsiFrame").src =
-        `https://meet.jit.si/StudyWithNero-${room}`;
-</script>
-
-</body>
-</html>
+        <script>
+            if (localStorage.getItem("theme") === "dark") {
+                document.body.classList.add("dark");
+            }
+        </script>
+    </body>
+    </html>

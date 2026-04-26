@@ -3,55 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study you idiot</title>
+
+    <title>Study You Idiot</title>
+
     <link rel="icon" type="image/x-icon" href="images/logo.png">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Momo+Signature&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Momo+Signature&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <section class="header">
-        <nav>
-            <div class="logo">
-                <a href="intro.html">
-                    <img src="images/logo.png" alt="Study With Nero Logo">
-                    <span>Study With Nero</span>
-                </a>
+
+<div id="loader">
+    <div class="loader-box">
+        <span>// BOOTING STUDY SYSTEM</span>
+        <h1>STUDY Y0U IDIOT</h1>
+        <div class="loading-bar">
+            <div></div>
+        </div>
+    </div>
+</div>
+
+<section class="header">
+
+    <nav>
+        <div class="logo">
+            <a href="intro.html">
+                <img src="images/logo.png" alt="Study You Idiot Logo">
+                <span>STUDY Y0U IDIOT</span>
+            </a>
+        </div>
+
+        <div class="nav-links">
+            <ul id="navMenu"></ul>
+        </div>
+    </nav>
+
+    <div class="hero-terminal">
+        <div class="hero-label">// SYSTEM: STUDY_MODE_ACTIVE</div>
+
+        <h1>STUDY. FOCUS. ACHIEVE.</h1>
+
+        <p class="intro-text">
+            Join study rooms, track your goals, meet study partners,
+            and build your own focused study environment.
+        </p>
+
+        <div class="features">
+            <div>
+                <span>01</span>
+                <h3>Study Rooms</h3>
+                <p>Join rooms with people studying live.</p>
             </div>
 
-            <div class="nav-links">
-                <ul id="navMenu"></ul>
-            </div>
-        </nav>
-        <div class="text-box">
-            <span class="badge">Study Better • Together 🎯</span>
-
-            <h1>Time to achieve your goals</h1>
-
-            <p class="intro-text">
-                Study With Nero helps you join study rooms, stay focused,
-                and study with others instead of studying alone.
-            </p>
-
-            <div class="features">
-                <div>📚 Study Rooms</div>
-                <div>⏱️ Focus Time</div>
-                <div>🤝 Study Partners</div>
+            <div>
+                <span>02</span>
+                <h3>Goals System</h3>
+                <p>Write your goals and track your progress.</p>
             </div>
 
-            <p class="small-text">
-                Inspired by 
-                <a href="https://lms.acu.edu.eg/login/index.php" target="_blank">ACU LMS</a>
-                and
-                <a href="https://www.studystream.live/home" target="_blank">Study Stream</a>
-            </p>
-
-            <div class="hero-actions">
-                <a href="rooms.html" class="hero-btn primary">Start Studying</a>
-                <a href="Sign-up.html" class="hero-btn secondary">Create Account</a>
+            <div>
+                <span>03</span>
+                <h3>Profile Setup</h3>
+                <p>Build your study identity and bio.</p>
             </div>
         </div>
-    </section>
-    <script src="js/nav.js"></script>
+
+        <div class="hero-actions">
+            <a href="rooms.html" class="hero-btn primary">ENTER ROOMS</a>
+            <a href="Sign-up.html" class="hero-btn secondary">CREATE PROFILE</a>
+        </div>
+    </div>
+
+</section>
+
+<script src="js/nav.js"></script>
+
+<script>
+window.addEventListener("load", function () {
+    setTimeout(() => {
+        document.getElementById("loader").classList.add("hide");
+    }, 1800);
+});
+</script>
+
 </body>
 </html>
