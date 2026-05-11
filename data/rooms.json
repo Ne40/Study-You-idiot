@@ -1,14 +1,11 @@
 [
     {
-        "name": "Deep Focus Room",
-        "users": 12
+        "name": "Deep Focus Room"
     },
     {
-        "name": "Chill Study Room",
-        "users": 8
+        "name": "Chill Study Room"
     },
     {
-        "name": "Night Owls 🌙",
-        "users": 5
+        "name": "Night Owls 🌙"
     }
 ]
